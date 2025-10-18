@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="styleN.css" />
+  <script src="scriptN.js" defer></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css" />
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <div class="logo">
+      <i class="fas fa-cloud-sun"></i> WEATHER
+    </div>
+    <div class="settings">
+      <button id="customize">Customize <i class="fas fa-cog"></i></button>
+      <button id="alerts-btn">Alerts <i class="fas fa-exclamation-triangle"></i></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="weather-container">
+    <!-- Left Weather Card -->
+    <div class="left-card">
+      <div class="city-select">
+        <i class="fas fa-map-marker-alt"></i> Top Cities: 
+        <select id="city">
+          <option value="Delhi">Delhi</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Kolkata">Kolkata</option>
+          <option value="Hyderabad">Hyderabad</option>
+        </select>
+      </div>
+
+      <!-- New Your City Button -->
+      <div class="gps-section">
+        GPS Based: 
+        <button id="detect-location">Your City <i class="fas fa-location-arrow"></i></button>
+        <p id="detected-city" class="detected-city"></p>
+      </div>
+
+      <div class="weather-info">
+        <h2 id="temperature">30°C</h2>
+        <span><p id="condition">Sunny</p></span>
+        <hr />
+        <p id="date">Tuesday, 22 Oct 2024</p>
+        <p id="last-updated">Last Updated: 8:00 PM</p>
+      </div>
+    </div>
+
+    <!-- Right Specification Cards -->
+    <div class="right-cards">
+      <div class="spec-card">
+        <p>Humidity</p>
+        <h3 id="humidity">70%</h3>
+      </div>
+      <div class="spec-card">
+        <p>Visibility</p>
+        <h3 id="visibility">2.5 km</h3>
+      </div>
+      <div class="spec-card">
+        <p>Feels Like</p>
+        <h3 id="feels-like">34°C</h3>
+      </div>
+      <div class="spec-card">
+        <p>Wind Speed</p>
+        <h3 id="wind-speed">3 m/s</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Table for Highlights -->
+  <div class="highlights-table">
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
+        <button id="historical-btn">Historical Data</button>
+      </div>
+    <h3 id="highlights-title">Delhi’s Highlights</h3>
+    <table id="highlights-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Min Temp</th>
+          <th>Max Temp</th>
+          <th>Avg Temp</th>
+          <th>Condition</th>
+          <!-- <th>Alert Recorded?</th> -->
+        </tr>
+      </thead>
+      <tbody id="highlights-body">
+        <!-- Rows dynamically inserted -->
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<!-- Temperature Unit Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="close-modal" class="close">&times;</span>
+    <h2>Customize Weather Settings</h2>
+    <p>Select temperature unit:</p>
+    <div class="unit-buttons">
+      <button id="btn-celsius" class="unit-btn">Celsius (°C)</button>
+      <button id="btn-fahrenheit" class="unit-btn">Fahrenheit (°F)</button>
+      <button id="btn-kelvin" class="unit-btn">Kelvin (K)</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

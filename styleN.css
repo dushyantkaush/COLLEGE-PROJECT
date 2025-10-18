@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #373D3B;
+  color: #f1f1f1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  background-color: #D6E8F7;
+  color: #373D3B;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  border-bottom: 2px solid #737373;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.settings {
+  display: flex;
+  gap: 15px;
+}
+
+button {
+  background-color: #A6A6A6;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button i {
+  margin-left: 5px;
+}
+
+main {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.weather-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #737373;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.left-card {
+  flex: 1;
+  background-color: #D6E8F7;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  color: #373D3B;
+  min-width: 280px;
+}
+
+.city-select select {
+  background-color: #A6A6A6;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-size: 1.1em;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.gps-section {
+  margin-bottom: 15px;
+  /* text-align: center; */
+}
+
+.detected-city {
+  margin-top: 5px;
+  font-weight: bold;
+  color: #373D3B;
+}
+
+.weather-info h2 {
+  font-size: 3em;
+  margin: 10px 0;
+}
+
+.weather-info p {
+  font-size: 1.1em;
+  margin: 5px 0;
+}
+
+.right-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  flex: 1;
+  min-width: 280px;
+}
+
+.spec-card {
+  background-color: #A6A6A6;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.highlights-table {
+  background-color: #737373;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  margin: 20px 0;
+}
+
+.highlights-table h3 {
+  color: #D6E8F7;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+thead th {
+  background-color: #A6A6A6;
+  padding: 10px;
+  color: #f1f1f1;
+}
+
+tbody td {
+  background-color: #737373;
+  padding: 10px;
+  color: #D6E8F7;
+}
+
+tbody tr {
+  border-bottom: 1px solid #A6A6A6;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 400px;
+  max-width: 90%;
+  position: relative;
+  animation: slide-down 0.3s ease-out;
+}
+
+.unit-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.unit-btn {
+  padding: 10px;
+  background-color: #007BFF;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Animation */
+@keyframes slide-down {
+  from {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .weather-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .right-cards {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .highlights-table {
+    width: 95%;
+  }
+
+  .left-card {
+    width: 100%;
+  }
+}
+
+/* Modal Heading Styles */
+.modal-content h2 {
+  color: #373D3B; /* same as your previous left-card text color */
+  margin-bottom: 10px;
+}
+
+/* Optional: modal paragraph color for instructions (like 'Select temperature unit:') */
+.modal-content p {
+  color: #373D3B;
+  font-size: 1em;
+}
+
+/* Modal Close Button */
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 25px;
+  cursor: pointer;
+  color: #373D3B; /* same as modal heading */
+}
+
+/* Breakpoint for very small screens (300px - 400px) */
+@media (max-width: 400px) and (min-width: 300px) {
+  .weather-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .left-card,
+  .right-cards,
+  .highlights-table {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .right-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  table {
+    font-size: 0.7em; /* shrink table font for small screens */
+  }
+
+  button {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  .city-select select {
+    font-size: 1em;
+    padding: 4px;
+  }
+
+  .weather-info h2 {
+    font-size: 2em;
+  }
+
+  .weather-info p {
+    font-size: 1em;
+  }
+}
+
+
